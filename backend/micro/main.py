@@ -43,7 +43,6 @@ def taskList():
 		"size": len(out)
 	}
 	
-
 #! Single task
 @app.route('/tasks/<string:id>', methods=["GET"])
 def taskDetails(id):
@@ -55,16 +54,16 @@ def taskDetails(id):
     "exists": len(out) > 0
   }
     
-# #! Toggle state
-# @app.route('/tasks/<string:id>', methods=["PATCH"])
-# def toggleState(id):
-#   tasks = deta.Base('tasks')
+#! Toggle state
+@app.route('/tasks/<string:id>', methods=["PATCH"])
+def toggleState(id):
+  tasks = deta.Base('tasks')
+  state = tasks.fetch({"key": id}).items[0].get("state")
+  tasks.update({"state": not state}, id)
   
-#   { "id": id }
-  
-#   return {
-#     "updated": True,
-#   }
+  return {
+    "updated": True,
+  }
   
 # #! Edit task
 # @app.route('/tasks/<int:id>', methods=["PUT"])

@@ -14,7 +14,6 @@
     const response = await fetch(url + "tasks", { method:'GET' });
     let tasks = await response.json();
 
-    console.log(tasks);
     toDoList.set(tasks.data);
   });
 </script>
