@@ -5,7 +5,8 @@
   import { toDoList } from '../components/controller/store.js';
   import { onMount } from 'svelte';
 
-  let url = "http://127.0.0.1:5000/";
+  // Project key: a05juqv9_d4UX8wccxbqnbfXndYUNGNnhjEbsHSxG
+  let url = "https://u6bauy.deta.dev/";
 
   // Load all tasks from the database
   onMount(async () => {

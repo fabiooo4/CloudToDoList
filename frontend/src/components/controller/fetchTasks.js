@@ -1,6 +1,6 @@
 import { toDoList } from "./store";
 
-let url = "http://127.0.0.1:5000/tasks";
+let url = "https://u6bauy.deta.dev/tasks";
 
 //? Refresh tasks
 export const refreshTasks = async () => {
