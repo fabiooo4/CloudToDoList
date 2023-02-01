@@ -1,6 +1,5 @@
 from flask import Flask, request
 from flask_cors import CORS
-import datetime
 import sqlite3
 
 # run the app: python -m flask --app main.py run
@@ -31,7 +30,7 @@ def getBody():
 def index():
   out = [{"msg": "index"}]
   return out
-
+  
 #! Tasks list
 @app.route('/tasks', methods=["GET"])
 def taskList():
@@ -120,7 +119,7 @@ def taskDelete(id):
   database = connect(taskdb)
   database.get("cursor").execute(f"""
   DELETE FROM tasks
-    WHERE id = {id} 
+    WHERE id = {id}
   """)
   database.get("db").commit()
   return {
