@@ -4,6 +4,7 @@
   import Search from '../components/view/search.svelte';
   import { toDoList } from '../components/controller/store.js';
   import { onMount } from 'svelte';
+  import { getSingle } from '../components/controller/fetchTasks';
 
   // Project key: a05juqv9_d4UX8wccxbqnbfXndYUNGNnhjEbsHSxG
   let url = "https://u6bauy.deta.dev/";
@@ -13,6 +14,7 @@
     const response = await fetch(url + "tasks", { method:'GET' });
     let tasks = await response.json();
 
+    console.log(tasks);
     toDoList.set(tasks.data);
   });
 </script>

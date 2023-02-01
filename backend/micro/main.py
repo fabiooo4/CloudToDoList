@@ -21,16 +21,16 @@ def index():
   return out
 
   
-#! User list
-@app.route('/user', methods=["GET"])
-def userList():
-  users = deta.Base('users')
-  out = users.fetch().items
+# #! User list
+# @app.route('/user', methods=["GET"])
+# def userList():
+#   users = deta.Base('users')
+#   out = users.fetch().items
   
-  return {
-    "data": out,
-    "size": len(out)
-  }
+#   return {
+#     "data": out,
+#     "size": len(out)
+#   }
   
 #! Task list
 @app.route('/tasks', methods=["GET"])
@@ -44,42 +44,23 @@ def taskList():
 	}
 	
 
-# #! Single task
-# @app.route('/tasks/<int:id>')
-# def taskDetails(id):
-#   database = connect(taskdb)
+#! Single task
+@app.route('/tasks/<string:id>', methods=["GET"])
+def taskDetails(id):
+  tasks = deta.Base('tasks')
+  out = tasks.fetch({"key": id}).items
   
-#   database.get("cursor").execute(f"""
-#   SELECT * FROM tasks
-#     WHERE id = ?
-#   """, (id,))
-    
-#   out = []
-#   for row in database.get("cursor").fetchall():
-#     out.append({
-#       "id": row[0],
-#       "date": row[1],
-#       "title": row[2],
-#       "content": row[3],
-#       "state": row[4]
-#     })
-  
-#   return {
-#     "data": out,
-#     "exists": len(out) > 0
-#   }
+  return {
+    "data": out,
+    "exists": len(out) > 0
+  }
     
 # #! Toggle state
-# @app.route('/tasks/<int:id>', methods=["PATCH"])
+# @app.route('/tasks/<string:id>', methods=["PATCH"])
 # def toggleState(id):
-#   database = connect(taskdb)
+#   tasks = deta.Base('tasks')
   
-#   database.get("cursor").execute(f"""
-#   UPDATE tasks
-#     SET state = NOT state
-#     WHERE id = ?
-#   """, (id,))
-#   database.get("db").commit()
+#   { "id": id }
   
 #   return {
 #     "updated": True,

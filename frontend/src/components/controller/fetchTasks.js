@@ -17,7 +17,7 @@ export const getTasks = async () => {
 
 //? Get a single task from the server
 export const getSingle = async (index) => {
-  const response = await fetch(url + "/" + index, { method: "GET" });
+  const response = await fetch(url + "/" + index.toString(), { method: "GET" });
   const data = await response.json();
   return data;
 }
