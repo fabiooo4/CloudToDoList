@@ -8,8 +8,6 @@
   let user = $userId;
   let noClose = "";
 
-  console.log(user);
-
   const clear = () => {
     title = "";
     date = "";
