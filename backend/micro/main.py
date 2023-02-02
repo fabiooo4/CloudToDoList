@@ -66,7 +66,7 @@ def toggleState(id):
   }
   
 # #! Edit task
-# @app.route('/tasks/<int:id>', methods=["PUT"])
+# @app.route('/tasks/<string:id>', methods=["PUT"])
 # def editTask(id):
 #   database = connect(taskdb)
 #   body = getBody()
@@ -83,7 +83,7 @@ def toggleState(id):
 #   }
 
 # #! Delete task
-# @app.route('/tasks/<int:id>' , methods=["DELETE"])
+# @app.route('/tasks/<string:id>' , methods=["DELETE"])
 # def taskDelete(id):
 #   database = connect(taskdb)
 #   database.get("cursor").execute(f"""
@@ -95,19 +95,21 @@ def toggleState(id):
 #     "deleted": True
 #   }
 
-# #! Add task
-# @app.route('/tasks', methods=["POST"])
-# def addTask():  
-#   database = connect(taskdb)
-#   body = getBody()
+#! Add task
+@app.route('/tasks', methods=["POST"])
+def addTask():  
+  tasks = deta.Base('tasks')
+  body = getBody()
   
-#   database.get("cursor").execute("""
-#   INSERT INTO tasks(date, title, content, state) VALUES(?, ?, ?, ?)
-#   """, (body["date"], body["title"], body["content"], False))
-#   database.get("db").commit()
+  tasks.put({
+    "title": body["title"],
+    "content": body["content"],
+    "date": body["date"],
+    "state": False
+  })
   
-#   return {
-#     "added": True,
-#   }
+  return {
+    "added": True,
+  }
 
-# print("Server started")
+print("Server started")
