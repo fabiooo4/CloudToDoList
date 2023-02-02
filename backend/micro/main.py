@@ -21,16 +21,45 @@ def index():
   return out
 
   
-# #! User list
-# @app.route('/user', methods=["GET"])
-# def userList():
-#   users = deta.Base('users')
-#   out = users.fetch().items
+#! Login user
+@app.route('/login', methods=["POST"])
+def login():
+  users = deta.Base('users')
+  body = getBody()
   
-#   return {
-#     "data": out,
-#     "size": len(out)
-#   }
+  out = users.fetch({"username": body["username"], "password": body["password"]}).items
+  
+  if len(out) == 0:
+    return {
+      "exists": False
+    }
+  else:
+    return {
+      "exists": True,
+      "data": out[0]
+    }
+    
+#! Register user
+@app.route('/register', methods=["POST"])
+def register():
+  users = deta.Base('users')
+  body = getBody()
+  
+  out = users.fetch({"username": body["username"]}).items
+  
+  if len(out) > 0:
+    return {
+      "added": False
+    }
+  else:
+    users.insert({
+      "username": body["username"],
+      "password": body["password"]
+    })
+    
+    return {
+      "added": True
+    }
   
 #! Task list
 @app.route('/tasks', methods=["GET"])
@@ -101,7 +130,8 @@ def addTask():
     "title": body["title"],
     "content": body["content"],
     "date": body["date"],
-    "state": False
+    "state": False,
+    "userId": body["userId"]
   })
   
   return {

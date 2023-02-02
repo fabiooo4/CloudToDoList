@@ -1,5 +1,5 @@
 <script>
-  import { editTask } from "../controller/fetchTasks";
+  import { editTask } from "../controller/fetchApi";
 
   export let task;
 
