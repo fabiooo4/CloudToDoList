@@ -31,15 +31,15 @@ The theme can be changed by changing the `data-theme` variable in `src/app.html`
 ### Login page
 ![Login](https://i.postimg.cc/mg8HNsmt/image-2023-02-02-200906973.png)
 ### Main page
-![TaskList](https://i.postimg.cc/hvzVT8W5/image-2023-01-31-204407880.png)
+![TaskList](https://i.postimg.cc/hGhfLZZn/image-2023-02-02-205037045.png)
 <br>
 
 ### Add and edit task
-![AddTask](https://i.postimg.cc/0ydDY2FP/image-2023-01-31-204442409.png)
+![AddTask](https://i.postimg.cc/mZ32HGZM/image-2023-02-02-205121330.png)
 <br>
 
 ### Delete task
-![DeleteTask](https://i.postimg.cc/1zv7yZGc/image-2023-01-31-204519187.png)
+![DeleteTask](https://i.postimg.cc/jdZxMQ7S/image-2023-02-02-205152327.png)
 
 <br><br>
 
@@ -48,12 +48,12 @@ The theme can be changed by changing the `data-theme` variable in `src/app.html`
 ![LoginMobile](https://i.postimg.cc/cJzThYFg/image-2023-02-02-201340473.png)
 
 ### Main page
-![TaskListMobile](https://i.postimg.cc/k5GFFRSK/image-2023-01-31-204712294.png)
+![TaskListMobile](https://i.postimg.cc/XvF06wpF/image-2023-02-02-205315071.png)
 <br>
 
 ### Add and edit task
-![AddTaskMobile](https://i.postimg.cc/dVyJ74Hy/image-2023-01-31-205021527.png)
+![AddTaskMobile](https://i.postimg.cc/TY48ykbg/image-2023-02-02-205409855.png)
 <br>
 
 ### Delete task
-![DeleteTaskMobile](https://i.postimg.cc/VLy8xjLs/image-2023-01-31-205207973.png)
+![DeleteTaskMobile](https://i.postimg.cc/4NnqTz0d/image-2023-02-02-205508253.png)
