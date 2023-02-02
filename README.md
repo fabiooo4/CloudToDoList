@@ -1,5 +1,8 @@
 # Distributed To-Do List
-A responsive to-do list with back-end using Flask and front-end using SvelteKit
+A responsive to-do list with back-end using Deta cloud and front-end using SvelteKit.
+
+This is a variation of the [Distributed To-Do List](https://github.com/fabiooo4/DistributedToDoList) project, but this time instead of using a local database, it uses the Deta cloud to store the tasks and the users.
+In this project, the user can create an account, login and manage its own tasks, which differ from the tasks of other users.
 
 ## How to run
 1. Clone the repository
@@ -8,18 +11,14 @@ A responsive to-do list with back-end using Flask and front-end using SvelteKit
 npm install
 ```
 
-3. Run the backend
-```bash
-python -m flask --app main.py run
-```
-
-4. Run the frontend
+3. Run the frontend
 ```bash
 npm run dev
 ```
 
-5. Open the browser and run the website on your localhost
-6. Enjoy!
+4. Open the browser and run the website on your localhost
+5. Enjoy!
+<br>
 
 ## Extra
 The themes used are based on [daisyUI](https://daisyui.com/docs/themes/), a Tailwind CSS plugin.
@@ -29,6 +28,8 @@ The theme can be changed by changing the `data-theme` variable in `src/app.html`
 <br><br>
 
 # Desktop Page Preview 
+### Login page
+![Login](https://i.postimg.cc/mg8HNsmt/image-2023-02-02-200906973.png)
 ### Main page
 ![TaskList](https://i.postimg.cc/hvzVT8W5/image-2023-01-31-204407880.png)
 <br>
