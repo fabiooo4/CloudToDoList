@@ -1,6 +1,7 @@
 <script>
   import Login from '../components/view/login.svelte';
   import TaskList from '../components/view/taskList.svelte';
+  import Logout from '../components/view/logout.svelte';
 
   import { toDoList } from '../components/controller/store.js';
   import { onMount } from 'svelte';
@@ -19,6 +20,7 @@
 </script>
 
 {#if $isLogged}
+  <Logout />
   <TaskList />
 {:else}
   <Login />
