@@ -5,6 +5,7 @@
   import Search from '../components/view/search.svelte';
   import { toDoList } from '../components/controller/store.js';
   import { onMount } from 'svelte';
+  import { isLogged } from '../components/controller/store.js';
 
   // Project key: a05juqv9_d4UX8wccxbqnbfXndYUNGNnhjEbsHSxG
   let url = "https://u6bauy.deta.dev/";
@@ -18,8 +19,26 @@
   });
 </script>
 
-<Login />
+{#if $isLogged}
+  <h1 class="text-8xl text-center font-extrabold m-4">ToDo List</h1>
 
+  <div class="flex flex-row justify-center flex-wrap">
+    <Search />
+    <AddTask />
+  </div>
+
+  <div class='flex flex-row flex-wrap justify-center items-center w-screen pb-10'>
+    {#if $toDoList.length > 0}
+      {#each $toDoList as task}
+        <Task {task}/>
+      {/each}
+    {:else}
+      <h2 class='text-2xl text-center font-bold m-4'>No tasks found...</h2>
+    {/if}
+  </div>
+{:else}
+  <Login />
+{/if}
 
 <!-- <h1 class="text-8xl text-center font-extrabold m-4">ToDo List</h1>
 

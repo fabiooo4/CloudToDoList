@@ -21,16 +21,23 @@ def index():
   return out
 
   
-# #! User list
-# @app.route('/user', methods=["GET"])
-# def userList():
-#   users = deta.Base('users')
-#   out = users.fetch().items
+#! Login user
+@app.route('/login', methods=["POST"])
+def login():
+  users = deta.Base('users')
+  body = getBody()
   
-#   return {
-#     "data": out,
-#     "size": len(out)
-#   }
+  out = users.fetch({"username": body["username"], "password": body["password"]}).items
+  
+  if len(out) == 0:
+    return {
+      "exists": False
+    }
+  else:
+    return {
+      "exists": True,
+      "data": out[0]
+    }
   
 #! Task list
 @app.route('/tasks', methods=["GET"])
