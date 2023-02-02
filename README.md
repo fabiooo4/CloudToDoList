@@ -44,6 +44,9 @@ The theme can be changed by changing the `data-theme` variable in `src/app.html`
 <br><br>
 
 # Mobile Page Preview
+### Login page
+![LoginMobile](https://i.postimg.cc/cJzThYFg/image-2023-02-02-201340473.png)
+
 ### Main page
 ![TaskListMobile](https://i.postimg.cc/k5GFFRSK/image-2023-01-31-204712294.png)
 <br>
