@@ -1,10 +1,10 @@
 <script>
+  import Login from '../components/view/login.svelte';
   import Task from '../components/view/task.svelte';
   import AddTask from '../components/view/addTask.svelte';
   import Search from '../components/view/search.svelte';
   import { toDoList } from '../components/controller/store.js';
   import { onMount } from 'svelte';
-  import { getSingle } from '../components/controller/fetchTasks';
 
   // Project key: a05juqv9_d4UX8wccxbqnbfXndYUNGNnhjEbsHSxG
   let url = "https://u6bauy.deta.dev/";
@@ -18,7 +18,10 @@
   });
 </script>
 
-<h1 class="text-8xl text-center font-extrabold m-4">ToDo List</h1>
+<Login />
+
+
+<!-- <h1 class="text-8xl text-center font-extrabold m-4">ToDo List</h1>
 
 <div class="flex flex-row justify-center flex-wrap">
   <Search />
@@ -33,4 +36,4 @@
   {:else}
     <h2 class='text-2xl text-center font-bold m-4'>No tasks found...</h2>
   {/if}
-</div>
+</div> -->
