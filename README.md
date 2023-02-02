@@ -1,4 +1,4 @@
-# Distributed To-Do List
+# Cloud To-Do List
 A responsive to-do list with back-end using Deta cloud and front-end using SvelteKit.
 
 This is a variation of the [Distributed To-Do List](https://github.com/fabiooo4/DistributedToDoList) project, but this time instead of using a local database, it uses the Deta cloud to store the tasks and the users.
