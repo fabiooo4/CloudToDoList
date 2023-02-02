@@ -56,7 +56,7 @@ export const addTask = async (task) => {
 
 //? Edit a task on the server
 export const editTask = async (task) => {
-  const response = await fetch(url + "/" + task.id, {
+  const response = await fetch(url + "/" + task.key, {
     method: "PUT",
     headers: {
       'Content-type': 'application/json'

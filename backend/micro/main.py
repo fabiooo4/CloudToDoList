@@ -65,22 +65,21 @@ def toggleState(id):
     "updated": True,
   }
   
-# #! Edit task
-# @app.route('/tasks/<string:id>', methods=["PUT"])
-# def editTask(id):
-#   database = connect(taskdb)
-#   body = getBody()
+#! Edit task
+@app.route('/tasks/<string:id>', methods=["PUT"])
+def editTask(id):
+  tasks = deta.Base('tasks')
+  body = getBody()
   
-#   database.get("cursor").execute(f"""
-#   UPDATE tasks
-#     SET date = ?, title = ?, content = ?
-#     WHERE id = ?
-#   """, (body["date"], body["title"], body["content"], id))
-#   database.get("db").commit()
+  tasks.update({
+    "title": body["title"],
+    "content": body["content"],
+    "date": body["date"]
+  }, id)
   
-#   return {
-#     "updated": True,
-#   }
+  return {
+    "updated": True,
+  }
 
 #! Delete task
 @app.route('/tasks/<string:id>' , methods=["DELETE"])
