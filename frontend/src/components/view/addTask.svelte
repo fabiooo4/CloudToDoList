@@ -1,10 +1,14 @@
 <script>
   import { addTask } from "../controller/fetchApi";
+  import { userId } from "../controller/store";
 
   let title = "";
   let date = "";
   let content = "";
+  let user = $userId;
   let noClose = "";
+
+  console.log(user);
 
   const clear = () => {
     title = "";
@@ -17,7 +21,8 @@
       const body = {
         "date": date,
         "title": title,
-        "content": content
+        "content": content,
+        "userId": user
       };
 
       addTask(body);

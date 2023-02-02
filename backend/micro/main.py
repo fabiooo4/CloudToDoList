@@ -4,17 +4,6 @@ from deta import Deta
 
 deta = Deta()
 
-users = deta.Base('users')
-users.insert({
-  "username": "admin",
-  "password": "admin"
-})
-
-users.insert({
-  "username": "user",
-  "password": "user"
-})
-
 app = Flask(__name__)
 CORS(app)
 
@@ -119,7 +108,8 @@ def addTask():
     "title": body["title"],
     "content": body["content"],
     "date": body["date"],
-    "state": False
+    "state": False,
+    "userId": body["userId"]
   })
   
   return {

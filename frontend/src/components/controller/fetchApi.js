@@ -1,4 +1,4 @@
-import { toDoList } from "./store";
+import { toDoList, userId } from "./store";
 
 let url = "https://u6bauy.deta.dev/";
 
@@ -18,6 +18,7 @@ export const login = async (username, password) => {
     body: JSON.stringify({ "username": username.toString(), "password": password.toString() })
   });
   const data = await response.json();
+  userId.set(data.data["key"]);
   return data;
 }
 
