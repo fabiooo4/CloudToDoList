@@ -2,12 +2,6 @@ import { toDoList, userId } from "./store";
 
 let url = "https://u6bauy.deta.dev/";
 
-//? Refresh tasks
-export const refreshTasks = async () => {
-  const tasks = await getTasks();
-  toDoList.set(tasks.data);
-}
-
 //? Login user
 export const login = async (username, password) => {
   const response = await fetch(url + "login", {
@@ -18,8 +12,33 @@ export const login = async (username, password) => {
     body: JSON.stringify({ "username": username.toString(), "password": password.toString() })
   });
   const data = await response.json();
-  userId.set(data.data["key"]);
+
+  // try {
+  //   userId.set(data.data["key"]);
+  // }
+  // catch (e) {
+  //   console.log("");
+  // }
   return data;
+}
+
+//? Register user
+export const register = async (username, password) => {
+  const response = await fetch(url + "register", {
+    method: "POST",
+    headers: {
+      'Content-type': 'application/json'
+    },
+    body: JSON.stringify({ "username": username.toString(), "password": password.toString() })
+  });
+  const data = await response.json();
+  return data;
+}
+
+//? Refresh tasks
+export const refreshTasks = async () => {
+  const tasks = await getTasks();
+  toDoList.set(tasks.data);
 }
 
 //? Get all tasks from the server

@@ -38,6 +38,28 @@ def login():
       "exists": True,
       "data": out[0]
     }
+    
+#! Register user
+@app.route('/register', methods=["POST"])
+def register():
+  users = deta.Base('users')
+  body = getBody()
+  
+  out = users.fetch({"username": body["username"]}).items
+  
+  if len(out) > 0:
+    return {
+      "added": False
+    }
+  else:
+    users.insert({
+      "username": body["username"],
+      "password": body["password"]
+    })
+    
+    return {
+      "added": True
+    }
   
 #! Task list
 @app.route('/tasks', methods=["GET"])
