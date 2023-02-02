@@ -4,6 +4,17 @@ from deta import Deta
 
 deta = Deta()
 
+users = deta.Base('users')
+users.insert({
+  "username": "admin",
+  "password": "admin"
+})
+
+users.insert({
+  "username": "user",
+  "password": "user"
+})
+
 app = Flask(__name__)
 CORS(app)
 

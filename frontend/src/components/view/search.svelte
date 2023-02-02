@@ -1,6 +1,6 @@
 <script>
   import { toDoList } from "../controller/store.js";
-  import { refreshTasks } from "../controller/fetchTasks.js";
+  import { refreshTasks } from "../controller/fetchApi.js";
   export let search = "";
 
   $: if (search !== "") {

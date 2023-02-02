@@ -1,5 +1,5 @@
 <script>
-  import { addTask } from "../controller/fetchTasks";
+  import { addTask } from "../controller/fetchApi";
 
   let title = "";
   let date = "";

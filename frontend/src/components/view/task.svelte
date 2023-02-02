@@ -1,5 +1,5 @@
 <script>
-  import { toggleState } from "../controller/fetchTasks";
+  import { toggleState } from "../controller/fetchApi";
   import DeleteTask from "./deleteTask.svelte";
   import EditTask from "./editTask.svelte";
 

@@ -1,6 +1,6 @@
 <script>
   import { isLogged } from "../controller/store";
-  import { login } from "../controller/fetchTasks";
+  import { login } from "../controller/fetchApi";
 
   let username = '';
   let password = '';

@@ -1,5 +1,5 @@
 <script>
-  import { deleteTask } from "../controller/fetchTasks";
+  import { deleteTask } from "../controller/fetchApi";
 
   export let task;
 
