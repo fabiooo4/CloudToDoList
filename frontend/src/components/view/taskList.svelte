@@ -2,8 +2,8 @@
   import Task from './task.svelte';
   import AddTask from './addTask.svelte';
   import Search from './search.svelte';
-
-  import { toDoList } from '../controller/store.js';
+  
+	import { filteredToDoList } from './../controller/store.js';
   import { userId } from '../controller/store.js';
 </script>
 
@@ -15,7 +15,7 @@
 </div>
 
 <div class='flex flex-row flex-wrap justify-center items-center w-screen pb-10'>
-  {#each $toDoList as task}
+  {#each $filteredToDoList as task}
     {#if task.userId == $userId}
       <Task {task}/>
     {/if}
