@@ -6,7 +6,7 @@
   let title = task.title;
   let date = task.date;
   let content = task.content;
-  $: modal = task.id;
+  $: modal = task.key;
 
   const clear = () => {
     title = task.title;
@@ -16,14 +16,14 @@
 
   const close = () => {
     if (modal === "") {
-      modal = task.id;
+      modal = task.key;
     }
   }
   
   const handleEdit = () => {
     if (title && date) {
       let body = {
-        "id": task.id,
+        "key": task.key,
         "date": date,
         "title": title,
         "content": content
@@ -31,7 +31,7 @@
 
       editTask(body);
 
-      modal = task.id;
+      modal = task.key;
     } else {
       modal = "";
       alert("Please fill all the fields");

@@ -3,10 +3,10 @@
 
   export let task;
 
-  let modal = "delete" + task.id;
+  let modal = "delete" + task.key;
 
   const handleDelete = () => {
-    deleteTask(task.id);
+    deleteTask(task.key);
   };
 </script>
 

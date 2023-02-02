@@ -82,18 +82,15 @@ def toggleState(id):
 #     "updated": True,
 #   }
 
-# #! Delete task
-# @app.route('/tasks/<string:id>' , methods=["DELETE"])
-# def taskDelete(id):
-#   database = connect(taskdb)
-#   database.get("cursor").execute(f"""
-#   DELETE FROM tasks
-#     WHERE id = {id}
-#   """)
-#   database.get("db").commit()
-#   return {
-#     "deleted": True
-#   }
+#! Delete task
+@app.route('/tasks/<string:id>' , methods=["DELETE"])
+def taskDelete(id):
+  tasks = deta.Base('tasks')
+  tasks.delete(id)
+  
+  return {
+    "deleted": True
+  }
 
 #! Add task
 @app.route('/tasks', methods=["POST"])

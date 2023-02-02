@@ -30,15 +30,9 @@ export const toggleState = async (index) => {
   return data;
 }
 
-
-
-
-
 //? Delete a task given its index
 export const deleteTask = async (index) => {
-  const response = await fetch(url + "/" + index, {
-    method: "DELETE",
-  });
+  const response = await fetch(url + "/" + index, { method: "DELETE" });
   const data = await response.json();
 
   refreshTasks();
